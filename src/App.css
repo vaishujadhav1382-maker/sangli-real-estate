@@ -1,0 +1,233 @@
+/* ============================================
+  REAL ESTATE SANGLI GLOBAL STYLES
+  Theme: Soft, Warm Minimalist
+============================================ */
+
+:root {
+  /* Elegant Premium Real Estate Palette */
+  --color-primary:       #1A365D; /* Deep Navy Blue */
+  --color-primary-dark:  #0F1F3D;
+  --color-primary-light: #2B4C7E;
+  --color-bg-base:       #FCFCFA; /* Warm Crisp White */
+  --color-bg-alt:        #F4F1EA; /* Soft Warm Beige */
+  --color-accent:        #D4AF37; /* Refined Gold */
+  
+  --color-text-main:     #1F2937; /* Dark Slate Gray */
+  --color-text-muted:    #6B7280; /* Medium Gray */
+  --color-white:         #FFFFFF;
+  
+  /* Legacy mapping bindings to prevent breakage while we refactor */
+  --color-red:           var(--color-primary);
+  --color-red-dark:      var(--color-primary-dark);
+  --color-red-light:     var(--color-primary-light);
+  --color-black:         var(--color-text-main);
+  --color-dark:          var(--color-text-main);
+  --color-grey:          var(--color-bg-alt);
+  --color-off-white:     var(--color-bg-base);
+  --color-muted:         var(--color-text-muted);
+
+  /* Typography: Elegant Serif headers, clean Sans-Serif body */
+  --font-body:    'Inter', 'Poppins', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-card: 0 20px 40px rgba(0,0,0,0.03);
+  --shadow-soft: 0 10px 20px rgba(0,0,0,0.02);
+  --radius: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-base);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.section { padding: 104px 20px; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  text-align: center;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+.section-title span { color: var(--color-red); }
+.section-subtitle {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1rem;
+  margin-bottom: 22px;
+  line-height: 1.7;
+}
+.section-divider {
+  width: 74px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-red), var(--color-red-light));
+  margin: 12px auto 48px;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  font-family: var(--font-body);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  user-select: none;
+}
+.btn-primary {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+.btn-primary:hover {
+  background: var(--color-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192,57,43,0.45);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse    { 0%,100% { box-shadow: 0 0 0 0 rgba(26,54,93,.3); } 50% { box-shadow: 0 0 0 14px rgba(26,54,93,0); } }
+@keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glow { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+
+.animate-fadeInUp               { animation: fadeInUp 0.7s ease forwards; opacity: 0; }
+.animate-delay-1                { animation-delay: 0.15s; }
+.animate-delay-2                { animation-delay: 0.30s; }
+.animate-delay-3                { animation-delay: 0.45s; }
+
+.floating-whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #25d366;
+  box-shadow: 0 10px 25px -5px rgba(37,211,102,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 28px -5px rgba(37,211,102,0.4);
+}
+
+.floating-whatsapp:active {
+  transform: translateY(0) scale(1);
+}
+
+/* ============================================
+  RESPONSIVE ADJUSTMENTS
+============================================ */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 10px;
+  }
+
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    margin: 10px auto 32px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.8rem;
+  }
+}

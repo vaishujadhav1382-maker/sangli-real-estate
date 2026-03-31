@@ -1,0 +1,141 @@
+/* ---- Contact ---- */
+.contact {
+  background: linear-gradient(rgba(244, 241, 234, 0.88), rgba(252, 252, 250, 0.95)), url('/images/prop1.jpg') center/cover no-repeat fixed;
+  padding-top: clamp(80px, 8vh, 120px);
+  padding-bottom: clamp(60px, 8vh, 100px);
+  position: relative;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__title {
+  color: var(--color-dark);
+}
+
+.contact__title span {
+  color: var(--color-primary);
+}
+
+.contact .section-divider {
+  background: var(--color-accent);
+}
+
+.contact .section-subtitle {
+  color: var(--color-muted);
+}
+
+/* Cards Row */
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.contact-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 36px 26px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-accent);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card__icon {
+  font-size: 0.8rem;
+  letter-spacing: 0.9px;
+  font-weight: 700;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-accent);
+  background: var(--color-bg-base);
+  margin-bottom: 14px;
+}
+
+.contact-card__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--color-muted);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.contact-card__value {
+  display: block;
+  color: var(--color-dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.contact-card__value--link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Actions */
+.contact__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact__btn {
+  font-size: 0.93rem;
+}
+
+
+.contact__btn--dark {
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.contact__btn--dark:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact__btn { width: 100%; justify-content: center; }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 24px 18px;
+  }
+}

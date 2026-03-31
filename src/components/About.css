@@ -1,0 +1,192 @@
+/* ---- About ---- */
+.about {
+  background: linear-gradient(135deg, var(--color-bg-base) 0%, var(--color-bg-alt) 100%);
+  padding-top: clamp(30px, 6vh, 60px);
+  padding-bottom: clamp(30px, 6vh, 60px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center; /* Beautifully centers the text with the visual block */
+}
+
+.about__text {
+  margin-top: 0;
+}
+
+.about__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-accent);
+  color: var(--color-primary-dark);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.about__sub {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+  font-family: var(--font-heading);
+  line-height: 1.4;
+}
+
+.about__text p {
+  color: #484848;
+  line-height: 1.84;
+  margin-bottom: 16px;
+  font-size: 0.97rem;
+}
+
+.about__text strong { color: var(--color-dark); }
+
+.about__cta {
+  margin-top: 10px;
+}
+
+.about__visual {
+  order: -1; /* Reverse visual layout on desktop: image on the left! */
+  display: grid;
+  gap: 16px;
+}
+
+.about__image-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--color-text-main) 0%, var(--color-primary-dark) 100%);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.about__image {
+  width: 100%;
+  aspect-ratio: 16 / 8; /* Flatter image to save vertical space */
+  object-fit: cover;
+}
+
+.about__image-content {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(14, 10, 10, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.about__image-label {
+  margin-bottom: 6px;
+  color: var(--color-bg-alt);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.about__image-content h4 {
+  color: var(--color-white);
+  font-size: 1.1rem;
+  line-height: 1.45;
+  font-family: var(--font-heading);
+}
+
+/* Stats Grid */
+.about__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.stat-card:nth-child(even) {
+  margin-top: 0; /* Stagger removed to perfect screen fit */
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+  border-color: var(--color-accent);
+}
+
+.stat-card__value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-card__label {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .about__visual {
+    order: 0; /* Reset order on mobile so text comes first */
+  }
+
+  .about__image-content {
+    position: static;
+    border-radius: 0;
+    background: #140f0f;
+    backdrop-filter: none;
+  }
+
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__text p {
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+
+  .about__sub {
+    font-size: 1.25rem;
+  }
+
+  .about__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .about__stats {
+    grid-template-columns: 1fr;
+  }
+}
